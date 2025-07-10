@@ -1,0 +1,26 @@
+PROMTS
+-como saber si el valor null que se encuenra en precip type es cadena de texto o es un valor null real ?
+-existe en precip type el valor "null", como hago para cambiar ese valor  o eliminarlo
+-no se modifico, entonces como hago para eliminar totalmente el valor "null", excluir esos datos
+-recuerda que estoy trabajando en zeppelin, spark dame preguntas que pueden realizarse y resolverlas utilizando las consultas para mostrar al publico
+-
+-Generame consultas sobre estas columnas :
+root
+ |-- Formatted Date: timestamp (nullable = true)
+ |-- Summary: string (nullable = true)
+ |-- Precip Type: string (nullable = true)
+ |-- Temperature (C): double (nullable = true)
+ |-- Apparent Temperature (C): double (nullable = true)
+ |-- Humidity: double (nullable = true)
+ |-- Wind Speed (km/h): double (nullable = true)
+ |-- Wind Bearing (degrees): double (nullable = true)
+ |-- Visibility (km): double (nullable = true)
+ |-- Loud Cover: double (nullable = true)
+ |-- Pressure (millibars): double (nullable = true)
+ |-- Daily Summary: string (nullable = true)
+-z.show(
+weather_History
+  .groupBy("Precip Type")
+  .count()
+  .orderBy(desc("count"))
+) como quedaria esta consulya excluyendo los datos
